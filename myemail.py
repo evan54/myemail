@@ -1,9 +1,8 @@
 import smtplib
-
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-from config import O365, TO_ADDRESSES
+from .config import O365, TO_ADDRESSES
 
 
 def send_email(to, subject='', body='', cc='', bcc=''):
