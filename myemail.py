@@ -5,12 +5,15 @@ from email.mime.text import MIMEText
 from .config import O365, TO_ADDRESSES
 
 
+SERVER = 'smtp.live.com'
+
+
 def send_email(to, subject='', body='', cc='', bcc=''):
 
     if isinstance(to, (tuple, list)):
         to = ', '.join(to)
 
-    server = smtplib.SMTP(O365.SERVER, 587)
+    server = smtplib.SMTP(SERVER, 587)
     server.starttls()
     server.login(O365.USERNAME, O365.PASSWORD)
     msg = MIMEMultipart()
